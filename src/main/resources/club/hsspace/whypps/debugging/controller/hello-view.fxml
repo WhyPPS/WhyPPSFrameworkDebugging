@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
+
+<SplitPane dividerPositions="0.7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="960.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="club.hsspace.whypps.debugging.controller.HelloController">
+  <items>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
+              <tabs>
+                  <Tab text="证书列表">
+                     <content>
+                        <TableView fx:id="tableCertificate" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="证书标识" />
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="有效开始时间" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="有效结束时间" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="证书地址(IPV4)" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="证书地址(IPV6)" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="证书可信度" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="本地证书" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="127.0" text="持有证书" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </Tab>
+                <Tab text="TCP链接">
+                     <content>
+                        <TableView fx:id="tableTcpConnect" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="144.0" text="编号" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="144.0" text="本地端口" />
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="144.0" text="远端地址" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="144.0" text="远端端口" />
+                              <TableColumn prefWidth="144.0" text="接入时间" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="144.0" text="接入方式" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="144.0" text="链接存活" />
+                          </columns>
+                        </TableView>
+                     </content>
+                </Tab>
+                <Tab text="DataStream数据流链接">
+                     <content>
+                        <TableView fx:id="tableDataStream" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="链接ID" />
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="本地证书" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="远端证书" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="TCP方向" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="接入方式" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="是否存活" />
+                          </columns>
+                        </TableView>
+                     </content>
+                </Tab>
+                  <Tab fx:id="tableListen" text="监听接口">
+                     <content>
+                        <TableView fx:id="tableApiInterface" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="接口标识" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="接口类型" />
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="监听类" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="监听方法" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="注册方式" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </Tab>
+                  <Tab text="API请求">
+                     <content>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </Tab>
+                  <Tab text="推送请求">
+                     <content>
+                        <TableView fx:id="tableVisitApi" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="DS链接ID" />
+                            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="接口标识" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="接口类型" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="data区" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="bin区" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="回应码" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="回应消息" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="回应data区" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="回应bin区" />
+                              <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="长链路存活标记" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <left>
+            <VBox prefHeight="668.0" prefWidth="258.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TitledPane text="TCP链接区">
+                     <content>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="242.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="inputIpPort" promptText="输入IP:端口" text="127.0.0.1:2683" />
+                              <Button mnemonicParsing="false" onAction="#buttonTcpConnect" prefHeight="23.0" prefWidth="128.0" text="建立TCP链接" />
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane text="证书申请区">
+                     <content>
+                        <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputApplyTcpID" promptText="TCP链接编号" />
+                                    <TextField fx:id="inputApplyCer" promptText="权威证书" />
+                                    <TextField fx:id="inputApplyMsg" promptText="附带信息" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#buttonApplyCer" text="申请证书" />
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane text="DS链接建立区">
+                     <content>
+                        <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputDSID" promptText="TCP链接编号" />
+                                    <TextField fx:id="inputDSSign" promptText="远端证书标识" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#buttonDataStream" prefHeight="23.0" prefWidth="106.0" text="建立DS链接" />
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane expanded="false" text="接口监听区">
+                     <content>
+                        <VBox alignment="CENTER" prefHeight="91.0" prefWidth="237.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="46.0" prefWidth="256.0" spacing="10.0">
+                                 <children>
+                                    <TextField promptText="接口标识" />
+                                    <Button mnemonicParsing="false" text="监听接口" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="37.0" prefWidth="236.0" spacing="10.0">
+                                 <children>
+                                    <RadioButton mnemonicParsing="false" text="数据" />
+                                    <RadioButton mnemonicParsing="false" text="二进制" />
+                                    <RadioButton mnemonicParsing="false" text="长链路" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane expanded="false" text="接口访问区">
+                     <content>
+                        <VBox alignment="CENTER" prefHeight="211.0" prefWidth="242.0" spacing="10.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="46.0" prefWidth="256.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputVisitDSID" promptText="链接ID" />
+                                    <Button mnemonicParsing="false" onAction="#buttonVisitApi" text="访问接口" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TextField fx:id="inputVisitApi" prefHeight="23.0" prefWidth="69.0" promptText="接口标识" />
+                              <HBox alignment="CENTER" prefHeight="37.0" prefWidth="236.0" spacing="10.0">
+                                  <children>
+                                      <RadioButton mnemonicParsing="false" selected="true" text="数据">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="radioVisitApi" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                      <RadioButton mnemonicParsing="false" text="二进制" toggleGroup="$radioVisitApi" />
+                                      <RadioButton mnemonicParsing="false" text="长链路" toggleGroup="$radioVisitApi" />
+                                  </children>
+                              </HBox>
+                              <TextArea fx:id="inputVisitData" prefHeight="72.0" prefWidth="236.0" promptText="data区" />
+                              <TextArea fx:id="inputVisitBin" prefHeight="68.0" prefWidth="236.0" promptText="bin区">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane expanded="false" text="广播发布区">
+                     <content>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="25.0" prefWidth="242.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputRadioAPI" maxHeight="1.7976931348623157E308" promptText="API接口" />
+                                    <TextField fx:id="inputRadioRange" maxHeight="1.7976931348623157E308" promptText="广播范围(int)" text="1" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="25.0" prefWidth="242.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputRadioBlackList" maxHeight="1.7976931348623157E308" promptText="黑马名单模式" text="false" />
+                                    <TextField fx:id="inputRadioList" maxHeight="1.7976931348623157E308" promptText="黑(白)名单" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="inputRadioCer" promptText="授权权威证书" />
+                              <TextArea fx:id="inputRadioData" prefHeight="47.0" prefWidth="211.0" promptText="data区">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonRadio" text="发布广播">
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" top="8.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane expanded="false" text="交换协议区">
+                     <content>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="25.0" prefWidth="242.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputSwapAPI" maxHeight="1.7976931348623157E308" promptText="API接口" />
+                                    <TextField fx:id="inputSwapRange" maxHeight="1.7976931348623157E308" promptText="广播范围(int)" text="1" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="25.0" prefWidth="242.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="inputSwapWait" maxHeight="1.7976931348623157E308" promptText="wait" text="true" />
+                                    <TextField fx:id="inputSwapValid" maxHeight="1.7976931348623157E308" promptText="valid" text="600" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="inputSwapCer" promptText="目的地址证书" />
+                              <TextArea fx:id="inputSwapData" prefHeight="47.0" prefWidth="211.0" promptText="data区">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonSwap" text="请求交换">
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" top="8.0" />
+                           </padding>
+                        </VBox>
+                     </content></TitledPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+      </BorderPane>
+      <TabPane fx:id="logTabPane" tabClosingPolicy="ALL_TABS">
+        <tabs>
+          <Tab closable="false" text="系统日志">
+               <content>
+                  <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <TextFlow fx:id="systemLog" />
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+  </items>
+</SplitPane>
